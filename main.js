@@ -261,6 +261,7 @@ function toggleComments(event, postId) {
 // Function 18: refreshPosts
 async function refreshPosts(posts) {
   if (!posts) {
+    console.error('Posts data is required'); // Optional: Log an error message
     return undefined;
   }
 
@@ -271,7 +272,8 @@ async function refreshPosts(posts) {
   try {
     await displayPosts(posts);
   } catch (error) {
-   return null;
+    console.error('Error refreshing posts', error); // Optional: Log an error message
+    return null;
   }
 
   addButtonListeners();
