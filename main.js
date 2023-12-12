@@ -272,7 +272,6 @@ async function refreshPosts(posts) {
   try {
     await displayPosts(posts);
   } catch (error) {
-    console.error('Error refreshing posts', error); // Optional: Log an error message
     return null;
   }
 
